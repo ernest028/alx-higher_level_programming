@@ -7,6 +7,7 @@ class Square:
     def __str__(self):
         """teach python to print the square my way"""
         return self.pos_print()[:-1]
+
     def __init__(self, size=0, position=(0, 0)):
         """ initialize the square with this
         Args:
@@ -65,12 +66,14 @@ class Square:
         if len([i for i in value if isinstance(i, int) and i >= 0]) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
+
     def area(self):
         """ the area of square
         Returns:
             size * size
         """
         return self.__size * self.__size
+
     def pos_print(self):
         """returns the printed square with position"""
         pos = ""
@@ -85,6 +88,7 @@ class Square:
                 pos += "#"
             pos += "\n"
         return pos
+
     def my_print(self):
         """print square."""
         print(self.pos_print(), end="")

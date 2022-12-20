@@ -11,7 +11,6 @@ class Node:
         self.next_node = next_node
 
     @property
-
     def data(self):
         """gets data attribute"""
         return (self.__data)
@@ -37,6 +36,7 @@ class Node:
             raise TypeError('next_node must be a Node object')
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """defines a singly linked list"""
 
@@ -52,6 +52,7 @@ class SinglyLinkedList:
             printsll += str(location.data) + "\n"
             location = location.next_node
         return printsll[:-1]
+
     def sorted_insert(self, value):
         """insert in a sorted fashion
         Args:
