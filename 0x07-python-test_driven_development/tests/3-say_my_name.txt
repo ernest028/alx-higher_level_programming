@@ -1,0 +1,76 @@
+This modules defines a function ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
+
+Both arguments are strings
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Runo", "Mercy")
+    My name is Runo Mercy
+
+One string has the space ' ' character
+
+::
+
+    >>> say_my_name("Runo Mercy", "Wanjiru")
+    My name is Runo Mercy Wanjiru
+
+The parameter ```last_name``` is optional. If no last name is provided,
+an empty string is printed instead.
+
+::
+
+    >>> say_my_name("Harris")
+    My name is Harris
+    
+    
+Invalid Names
+=============
+
+The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
+a TypeError is raised.
+
+First argument is an integer
+
+::
+
+    >>> say_my_name(8, "Jimmy")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Second argument is a list
+
+::
+
+    >>> say_my_name("I am", ["a", "Barbie", "girl"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+First argument is a dictionary
+
+::
+
+    >>> say_my_name({"in a": 6, "Barbie World": 23}, 7.7)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+None is passed as an argument
+
+::
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+No argument is passed onto the function
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'

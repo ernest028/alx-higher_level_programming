@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""
+   This module contains text_indentation which prints a text with 2
+   new lines after each of these characters: ., ? and :
+"""
+
+def text_indentation(text):
+    """
+    This function prints text with 2 new lines after these characters:
+      '.', '?', ':'
+    There should be no space at the beginning or end of the printed line
+
+    Arguments:
+      text: input text
+
+    Return:
+      formatted text
+
+    Exceptions:
+      TypeError: if text is not a string
+
+    """
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+    else:
+        special = ['.', '?', ':']
+        for letter in text:
+           print(letter, end="")
+           if letter in special:
+                text.strip()
+                print("\n\n", end="")
+                text.strip()
